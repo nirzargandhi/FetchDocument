@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gyf-u7-JR4">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="NHX-wL-PzH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="gyf-u7-JR4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nwV-gd-pYW">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MAM-oT-MMF" kind="relationship" relationship="rootViewController" id="RWP-ga-cX4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eby-Xl-yrG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="333.60000000000002" y="-104.7976011994003"/>
+        </scene>
+        <!--Fetch DocumentVC-->
+        <scene sceneID="5NH-83-V8a">
+            <objects>
+                <viewController storyboardIdentifier="FetchDocumentVC" id="MAM-oT-MMF" customClass="FetchDocumentVC" customModule="FetchDocument" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gss-ml-Clu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1X-dK-8q2">
+                                <rect key="frame" x="20" y="40" width="87" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="bb7-eo-Cky"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Fetch File"/>
+                                <connections>
+                                    <action selector="fetchPDFBtnTouch:" destination="MAM-oT-MMF" eventType="touchUpInside" id="JeZ-70-fBo"/>
+                                </connections>
+                            </button>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SfC-FK-kbh">
+                                <rect key="frame" x="20" y="95" width="335" height="552"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DzT-r0-JQm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="T1X-dK-8q2" firstAttribute="top" secondItem="DzT-r0-JQm" secondAttribute="top" constant="20" id="1Ke-VB-3Yh"/>
+                            <constraint firstItem="DzT-r0-JQm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="T1X-dK-8q2" secondAttribute="trailing" constant="20" id="L7g-sR-vKT"/>
+                            <constraint firstAttribute="trailing" secondItem="SfC-FK-kbh" secondAttribute="trailing" constant="20" id="NJS-VS-bS4"/>
+                            <constraint firstItem="T1X-dK-8q2" firstAttribute="leading" secondItem="DzT-r0-JQm" secondAttribute="leading" constant="20" id="fS4-wt-EqU"/>
+                            <constraint firstItem="SfC-FK-kbh" firstAttribute="top" secondItem="T1X-dK-8q2" secondAttribute="bottom" constant="20" id="hPC-dT-7w4"/>
+                            <constraint firstItem="SfC-FK-kbh" firstAttribute="leading" secondItem="gss-ml-Clu" secondAttribute="leading" constant="20" id="m04-oY-EBQ"/>
+                            <constraint firstAttribute="bottom" secondItem="SfC-FK-kbh" secondAttribute="bottom" constant="20" id="wrK-ui-bVk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xwG-F2-RCK"/>
+                    <connections>
+                        <outlet property="fetchFileBtn" destination="T1X-dK-8q2" id="SHX-Is-2Rb"/>
+                        <outlet property="webView" destination="SfC-FK-kbh" id="uoJ-xb-Y1a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RKQ-mM-f6o" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1272.8" y="-104.7976011994003"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
