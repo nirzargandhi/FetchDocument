@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     // MARK: - RootView Setup
-    func setRootViewController(rootVC: UIViewController) {
+    fileprivate func setRootViewController(rootVC: UIViewController) {
         
         self.navController = UINavigationController(rootViewController: rootVC)
         self.window?.rootViewController = self.navController
