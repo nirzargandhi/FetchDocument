@@ -10,7 +10,7 @@ import WebKit
 import MobileCoreServices
 import UniformTypeIdentifiers
 
-class FetchDocumentVC: UIViewController {
+class FetchDocumentVC: BaseVC {
     
     // MARK: - IBOutlets
     @IBOutlet weak var fetchFileBtn: UIButton!
